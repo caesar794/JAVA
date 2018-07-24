@@ -1,0 +1,24 @@
+import java.io.*;
+import java.net.*;
+class UDPserver
+{
+ public static void main(String args[])throws Exception
+  {
+    DatagramSocket serversocket=new DatagramSocket(9876);
+    byte[]receivedata=new byte[1024];
+    byte[]senddata=new byte[1024];
+    while(true)
+     {
+      DatagramPacket receivedpacket=new DatagramPacket(receivedata,receivedata.length);
+      serversocket.receive(receivedpacket);
+      String sentence=new String(receivedpacket.getData());
+      System.out.println("Received : "+sentence);
+      InetAddress Ipaddress=receivedpacket.getAddress();
+      int port=receivedpacket.getPort();
+      String capitalsentence=sentence.toUpperCase();
+      senddata=capitalsentence.getBytes();
+      DatagramPacket sendpacket=new DatagramPacket(senddata,senddata.length,Ipaddress,port);
+      serversocket.send(sendpacket);
+     }
+   }
+}
