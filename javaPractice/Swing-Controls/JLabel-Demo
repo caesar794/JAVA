@@ -1,0 +1,17 @@
+import java.awt.*;
+import javax.swing.*;
+public class JLbl extends JApplet 
+{	public void init() 
+	{	Container contentPane = getContentPane();
+		ImageIcon ii = new ImageIcon("france.gif");
+		JLabel jl = new JLabel("France", ii, JLabel.CENTER);
+		contentPane.add(jl);
+	}
+}
+
+/* Create an HTML file named as JLbl.html and enter the following code:
+
+<applet code="JLbl" width=250 height=150>
+</applet>
+
+*/
