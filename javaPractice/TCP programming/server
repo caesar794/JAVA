@@ -1,0 +1,20 @@
+import java.io.*;
+import java.net.*;
+class server
+{	public static void main(String[] args)
+	{	String data="HEllo This is server !!";
+		try{	ServerSocket serv=new ServerSocket(1284);
+			Socket skt=serv.accept();
+			System.out.println("Connection established !!");
+			PrintWriter out=new PrintWriter(skt.getOutputStream(),true);
+			System.out.println("Sending msg : "+data);
+			out.write(data);
+			out.close();
+			skt.close();
+			serv.close();
+		   }
+		catch(Exception e)
+		{	System.out.println("ERROR !!");
+		}
+	}
+}
