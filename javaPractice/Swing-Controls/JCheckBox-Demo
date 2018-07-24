@@ -1,0 +1,46 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+public class JChkbx extends JApplet implements ItemListener 
+{	JTextField jtf;
+	public void init() 
+	{	Container contentPane = getContentPane();
+		contentPane.setLayout(new FlowLayout());
+		ImageIcon normal = new ImageIcon("normal.gif");
+		ImageIcon rollover = new ImageIcon("rollover.gif");
+		ImageIcon selected = new ImageIcon("selected.gif");
+		JCheckBox cb = new JCheckBox("C", normal);
+		cb.setRolloverIcon(rollover);
+		cb.setSelectedIcon(selected);
+		cb.addItemListener(this);
+		contentPane.add(cb);
+		cb = new JCheckBox("C++", normal);
+		cb.setRolloverIcon(rollover);
+		cb.setSelectedIcon(selected);
+		cb.addItemListener(this);
+		contentPane.add(cb);
+		cb = new JCheckBox("Java", normal);
+		cb.setRolloverIcon(rollover);
+		cb.setSelectedIcon(selected);
+		cb.addItemListener(this);
+		contentPane.add(cb);
+		cb = new JCheckBox("Perl", normal);
+		cb.setRolloverIcon(rollover);
+		cb.setSelectedIcon(selected);
+		cb.addItemListener(this);
+		contentPane.add(cb);
+		jtf = new JTextField(15);
+		contentPane.add(jtf);
+	}
+	public void itemStateChanged(ItemEvent ie) 
+	{	JCheckBox cb = (JCheckBox)ie.getItem();
+		jtf.setText(cb.getText());
+	}
+}
+
+/* Create an HTML file named as JChkbx.html and enter the following code:
+
+<applet code="JChkbx" width=400 height=50>
+</applet>
+
+*/
