@@ -1,0 +1,53 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.applet.*;
+
+public class ChoiceDemo extends Applet implements ItemListener 
+{
+	Choice course, state; 
+	String msg = "";
+	public void init() 
+	{
+		course = new Choice();
+		state = new Choice();
+		course.add("BBA");
+		course.add("BCA");
+		course.add("B.Tech");
+		course.add("B.Pharmacy");
+
+		state.add("New-Delhi");
+		state.add("Mumbai");
+		state.add("Chennai");
+		state.add("Banglore");
+		state.add("Calcutta");
+		state.add("Punjab");
+		state.add("Goa");
+		state.add("Maharastra");
+		state.select("Kochi");
+
+		add(course);
+		add(state);
+		course.addItemListener(this); 
+		state.addItemListener(this);
+	}
+	public void itemStateChanged(ItemEvent ie) 
+	{ 
+		repaint();
+	}
+	public void paint(Graphics g) 
+	{
+		msg = "Current course selected : ";
+		msg += course.getSelectedItem();
+		g.drawString(msg, 6, 120);
+		msg = "Belongs to : ";
+		msg += state.getSelectedItem();
+		g.drawString(msg, 6, 140);
+	}
+}
+
+/* Create an html file named as ChoiceDemo.html and enter the following code:
+
+<applet code="ChoiceDemo" width=300 height=180>
+</applet>
+
+*/
