@@ -1,0 +1,32 @@
+import java.io.*;
+class cpchr
+{	public static void main(String[] args)
+	{	File infile=new File("abc.txt");
+		File outfile=new File("cpabc.txt");
+		FileReader ins=null;
+		FileWriter outs=null;
+		try
+		{	ins=new FileReader(infile);
+			outs=new FileWriter(outfile);
+			int ch;
+			while((ch=ins.read())!=-1)
+			{	outs.write(ch);
+			}
+		}
+		catch(IOException e)
+		{	System.out.println(e);
+		}
+		finally
+		{	try
+			{	ins.close();
+				outs.close();
+			}
+			catch(IOException e1)
+			{	System.out.println("Error !!");
+			}
+		}
+	}
+}
+
+
+/* If it doesn't work create abc.txt, cpabc.txt files in the same directory */
