@@ -45,7 +45,7 @@ public class btnDemo extends Applet implements ActionListener
 }
 
 
-/* Create an HTML file named as btnDemo and enter the following code:
+/* Create an HTML file named as btnDemo.html and enter the following code:
 
 <applet code="btnDemo" width=250 height=150>
 </applet>
