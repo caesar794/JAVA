@@ -1,0 +1,18 @@
+import java.awt.*;
+import javax.swing.*;
+public class JTxtfld extends JApplet 
+{	JTextField jtf;
+	public void init() 
+	{	Container contentPane = getContentPane();
+		contentPane.setLayout(new FlowLayout());
+		jtf = new JTextField(15);
+		contentPane.add(jtf);
+	}
+}
+
+/* Create an HTML file named as Jtxtfld.html and enter the following code:
+
+<applet code="JTxtfld" width=300 height=50>
+</applet>
+
+*/
