@@ -1,5 +1,5 @@
 # JAVA
 Java sample programs 
 
-Core Java programs : core_src directory
-Advance Java programs : adv_src directory
+Core Java programs : java directory,<br>
+Advance Java programs : src directory
