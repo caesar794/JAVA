@@ -1,0 +1,22 @@
+import java.applet.*;
+import java.awt.*;
+import java.net.*;
+
+public class labelDemo extends Applet
+{	public void init()
+	{	Label one = new Label("Administrator");
+		Label two = new Label("Logged in ");
+		Label three = new Label("currently !!");
+
+		add(one);
+		add(two);
+		add(three);
+	}
+}
+
+/* Create an HTML file named as labelDemo.html and enter the following code:
+
+<applet code="labelDemo" width=300 height=200>
+</applet>
+
+*/
