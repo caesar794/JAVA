@@ -1,0 +1,61 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.applet.*;
+
+public class Lst extends Applet implements ActionListener 
+{
+	List course, state;
+	String msg = "";
+
+	public void init() 
+	{
+		course = new List(4, true);
+		state = new List(4, false);
+		// add items to os list 
+		course.add("BBA");
+		course.add("BCA");
+		course.add("B.Tech");
+		course.add("B.Pharmacy");
+		// add items to browser list
+		state.add("New Delhi");
+		state.add("Mumbai");
+		state.add("Banglore");
+		state.add("Calcutta");
+		state.add("Punjab");
+		state.add("Chennai") ;
+		state.add("Maharastra");
+		state.add("Kochi");
+		state.select(1);
+		// add lists to window
+		add(course);
+		add(state);
+		// register to receive action events
+		course.addActionListener(this);
+		state.addActionListener(this);
+	}
+	public void actionPerformed(ActionEvent ae) 
+	{
+		repaint();
+	}
+
+	// Display current selections.
+	public void paint(Graphics g) 
+	{
+		int idx[];
+		msg = "Current course : ";
+		idx = course.getSelectedIndexes();
+		for(int i=0; i<idx.length; i++)
+		msg += course.getItem(idx[i]) + " ";
+		g.drawString(msg, 6, 120);
+		msg = "Current state : ";
+		msg += state.getSelectedItem();
+		g.drawString(msg, 6, 140);
+	}
+}
+
+/* Create an HTTML file named as Lst.html and enter the following code:
+
+<applet code="Lst" width=300 height=180>
+</applet>
+
+*/
