@@ -1,0 +1,14 @@
+import java.io.*;
+import java.net.*;
+class client
+{	public static void main(String[] args)
+	{	try{	Socket skt=new Socket("localhost",1284);
+			BufferedReader in=new BufferedReader(new InputStreamReader(skt.getInputStream()));
+			System.out.println("Recieved msg : "+in.readLine());
+			in.close();
+		   }
+		catch(Exception e)
+		{	System.out.println("Could not retreive msg !!");
+		}
+	}
+}
