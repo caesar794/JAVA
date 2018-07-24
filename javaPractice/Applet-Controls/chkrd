@@ -1,0 +1,45 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.Container;
+import java.applet.Applet;
+import java.awt.Checkbox;
+import java.awt.CheckboxGroup;
+public class chkrd extends Applet implements ItemListener
+{	String msg = "";
+	Checkbox BBA, BCA;
+	public void init()
+	{	Container contentPane = getContentPane();
+		contentPane.setLayout(new FlowLayout());
+
+		CheckboxGroup grp=new CheckboxGroup();
+		Checkbox java= new Checkbox("Java",grp,true);
+		Checkbox cpp=new Checkbox("C++",grp,true);
+		add(java);
+		add(cpp);
+
+		BBA = new Checkbox("BBA", null, true);
+		BCA = new Checkbox("BCA");
+		add(BBA);
+		add(BCA);
+		BBA.addItemListener(this);
+		BCA.addItemListener(this);
+	}
+	public void itemStateChanged(ItemEvent ie)
+	{	repaint();
+	}
+	public void paint(Graphics g)
+	{	msg="Current course : ";
+		g.drawString(msg,6,80);
+		msg="BBA : "+BBA.getState();
+		g.drawString(msg,6,100);
+		msg="BCA : "+BCA.getState();
+		g.drawString(msg,6,120);
+	}
+}
+
+
+/* Create an HTML file named as chkrd.html and enter the following code:
+
+<applet code="chkrd" width=250 height=200></applet>
+
+*/
