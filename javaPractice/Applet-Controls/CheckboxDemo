@@ -1,0 +1,53 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.applet.*;
+
+public class CheckboxDemo extends Applet implements ItemListener 
+{
+	String msg = "";
+	Checkbox BBA, BCA, B_TECH, B_PHARMACY;
+
+	public void init() 
+	{
+		BBA = new Checkbox("BBA", null, true);
+		BCA = new Checkbox("BCA");
+		B_TECH = new Checkbox("B.TECH");
+		B_PHARMACY = new Checkbox("B.PHARMACY");
+		add(BBA);
+		add(BCA);
+		add(B_TECH);
+		add(B_PHARMACY);
+		BBA.addItemListener(this);
+		BCA.addItemListener(this);
+		B_TECH.addItemListener(this);
+		B_PHARMACY.addItemListener(this);
+	}
+
+	public void itemStateChanged(ItemEvent ie) 
+	{
+		repaint();
+	}
+
+	// Display current state of the check boxes.
+	public void paint(Graphics g) 
+	{ 
+		msg = "Current course selected: ";
+		g.drawString(msg, 6, 80);
+		msg = "BBA : " + BBA.getState();
+		g.drawString(msg, 6, 100);
+		msg = " BCA: " + BCA.getState();
+		g.drawString(msg, 6, 120);
+		msg = " B.TECH: " + B_TECH.getState();
+		g.drawString(msg, 6, 140);
+		msg = " B.PHARMACY: " + B_PHARMACY.getState();
+		g.drawString(msg, 6, 160);
+	}
+}
+
+
+/* Create an HTML file named as CheckboxDemo and enter the following code:
+
+<applet code="CheckboxDemo" width=250 height=200>
+</applet>
+
+*/
