@@ -1,8 +1,0 @@
-package serial;
-import java.io.Serializable;
-
-public class employee implements Serializable
-{	public String firstName;
-	public String lastName;
-	public static final long serialVersionUID=5461;
-}
