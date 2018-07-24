@@ -45,7 +45,7 @@ public class CheckboxDemo extends Applet implements ItemListener
 }
 
 
-/* Create an HTML file named as CheckboxDemo and enter the following code:
+/* Create an HTML file named as CheckboxDemo.html and enter the following code:
 
 <applet code="CheckboxDemo" width=250 height=200>
 </applet>
