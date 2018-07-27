@@ -1,0 +1,38 @@
+import java.util.Scanner;
+interface calc
+{	public void add(int num1,int num2);
+	public void sub(int num1,int num2);
+	public void mul(int num1,int num2);
+	public void div(int num1,int num2);
+}
+class inte implements calc
+{	public int res;
+	public void add(int num1,int num2)
+	{	res=num1+num2;
+		System.out.println("Interface method (+) : "+res);
+	}
+	public void sub(int num1,int num2)
+	{	res=num1-num2;
+		System.out.println("Interface method (-) : "+res);
+	}
+	public void mul(int num1,int num2)
+	{	res=num1*num2;
+		System.out.println("Interface method (*) : "+res);
+	}
+	public void div(int num1,int num2)
+	{	res=num1/num2;
+		System.out.println("Interface method (/) : "+res);
+	}
+	public static void main(String args[])
+	{	int x,y;
+		Scanner obj=new Scanner(System.in);
+		System.out.println("Enter values (x,y) :");
+		x=obj.nextInt();
+		y=obj.nextInt();
+		calc obb=new inte();
+		obb.add(x,y);
+		obb.sub(x,y);
+		obb.mul(x,y);
+		obb.div(x,y);
+	}
+}
