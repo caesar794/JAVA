@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+class box
+{	double len,bre,hei,side;
+	double vol(double len,double bre,double hei)
+	{	return(len*bre*hei);
+	}
+	double vol(double side)
+	{	return(side*side*side);
+	}
+}
+class method
+{	public static void main(String args[])
+	{	int x,y,z,g;
+		Scanner obj =new Scanner(System.in);
+		box a=new box();
+		System.out.println("Enter length :");
+		x=obj.nextInt();
+		System.out.println("Enter breadth :");
+		y=obj.nextInt();
+		System.out.println("Enter height :");
+		z=obj.nextInt();
+		System.out.println("Volume :"+a.vol(x,y,z));
+		System.out.println("Enter side  :");
+		g=obj.nextInt();
+		System.out.println("Vol :"+a.vol(g));
+	}
+}
