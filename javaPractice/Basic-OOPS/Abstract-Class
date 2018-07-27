@@ -1,0 +1,22 @@
+import java.util.Scanner;
+abstract class val
+{	abstract void area(int num1,int num2);
+}
+class rect extends val
+{	public int len,bre,ar;
+	void area(int len,int bre)
+	{	ar=(len*bre);
+		System.out.println("Area (length,breadth) : "+ar);
+	}
+}
+class abst
+{	public static void main(String args[])
+	{	Scanner obj=new Scanner(System.in);
+		int x,y;
+		System.out.println("Enter Length, Breadth :");
+		x=obj.nextInt();
+		y=obj.nextInt();
+		val obb=new rect();
+		obb.area(x,y);
+	}
+}
