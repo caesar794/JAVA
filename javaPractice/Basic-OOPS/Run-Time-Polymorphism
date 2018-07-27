@@ -1,0 +1,36 @@
+import java.util.Scanner;
+class A
+{	int fn(int a,int b)
+	{	return(a*b);
+	}
+}
+class B extends A
+{	int fn(int a,int b)
+	{	return(a+b);
+	}
+}
+class C extends A
+{	int fn(int a,int b)
+	{	return(a-b);
+	}
+}
+class rtp
+{	public static void main(String args[])
+	{	int x,y;
+		Scanner obj=new Scanner(System.in);
+		A obja=new A();
+		B objb=new B();
+		C objc=new C();
+		System.out.println("Enter value (x) :");
+		x=obj.nextInt();
+		System.out.println("Enter value (y) :");
+		y=obj.nextInt();
+		A obb;
+		obb=obja;
+		System.out.println("Class A method (*) :"+obb.fn(x,y));
+		obb=objb;
+		System.out.println("Class B method (+) :"+obb.fn(x,y));
+		obb=objc;
+		System.out.println("Class C method (-) :"+obb.fn(x,y));
+	}
+}
