@@ -1,0 +1,13 @@
+import java.util.Scanner;
+class area
+{	public static void main(String args[])
+	{	int res,len,breadth;
+		System.out.println("Enter length :");
+		Scanner obj =new Scanner(System.in);
+		len=obj.nextInt();
+		System.out.println("Enter breadth :");
+		breadth=obj.nextInt();
+		res=len*breadth;
+		System.out.println("Area :"+res);
+	}
+}	
