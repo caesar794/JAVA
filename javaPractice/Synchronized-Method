@@ -1,0 +1,40 @@
+public class syncr
+{	public static void main(String[] args)
+	{	Table obj=new Table();
+		Th1 t1=new Th1(obj);
+		Th2 t2=new Th2(obj);
+		t1.start();
+		t2.start();
+	}
+}
+class Table
+{	synchronized void printTable(int n)
+	{	for(int i=1;i<=5;i++)
+		{	System.out.println(n*i);
+			try
+			{	Thread.sleep(400);
+			}
+			catch(Exception e)
+			{	System.out.println(e);
+			}
+		}
+	}
+}
+class Th1 extends Thread
+{	Table t;
+	Th1(Table t)
+	{	this.t=t;
+	}
+	public void run()
+	{	t.printTable(5);
+	}
+}
+class Th2 extends Thread
+{	Table t;
+	Th2(Table t)
+	{	this.t=t;
+	}
+	public void run()
+	{	t.printTable(100);
+	}
+}
