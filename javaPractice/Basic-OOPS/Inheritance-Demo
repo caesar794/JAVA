@@ -1,0 +1,35 @@
+import java.lang.*;
+class A
+{	int i,j,l;
+	A(int num1,int num2)
+	{	i=num1;
+		j=num2;
+	}
+	int sum()
+	{	return i+j;
+	}
+	
+}
+class B extends A
+{	int k,l;
+	B(int num1,int num2,int num3,int num4)
+	{	super(num1,num2);
+		k=num3;
+		l=num1;
+		super.l=num4;
+	}
+	void show()
+	{	System.out.println("Value of l i super class A : "+super.l);
+	}
+}
+class inheritance
+{	public static void main(String args[])
+	{	B obj=new B(1,2,3,4);
+		int res;
+		res=obj.sum();
+		System.out.println("Sum at nos. : "+res);
+		System.out.println("Value of k : "+obj.k);
+		obj.show();
+		System.out.println("Value of l of superclass B : "+obj.l);
+	}
+}
