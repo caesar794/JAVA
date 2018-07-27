@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class threademo extends Thread
+{	public static void main(String args[])
+	{	threademo t1=new threademo();
+		t1.start();
+	}
+	public void run()
+	{	Scanner obj=new Scanner(System.in);
+		int a,b,res;
+		System.out.println("Enter 2 nos. :");
+		a=obj.nextInt();
+		b=obj.nextInt();
+		res=a+b;
+		System.out.println("Result : "+res);
+	}
+}
